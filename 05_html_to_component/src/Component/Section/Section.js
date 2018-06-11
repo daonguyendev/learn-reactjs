@@ -14,6 +14,7 @@ class Section extends Component {
 
     clickSaveButton = () => {
         this.setState({currentStatus : 0});
+        console.log(this.refsData.value);
     }
 
     renderButton = () => {
@@ -31,7 +32,7 @@ class Section extends Component {
         return (
             <div className="row">
                 <div className="form-group">
-                    <input defaultValue={this.props.title} type="text" name="name" className="form-control"/>   
+                    <input ref={(inputData) => {this.refsData = inputData}} defaultValue={this.props.title} type="text" name="name" className="form-control"/>   
                 </div>
                 <div className="form-group">  
                     <div className="btn btn-success" onClick={() => this.clickSaveButton()}>Save</div>                       
