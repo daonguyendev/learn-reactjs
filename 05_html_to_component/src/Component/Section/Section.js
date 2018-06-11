@@ -8,36 +8,35 @@ class Section extends Component {
         }
     }
 
-    notificationNoArgs = () => {
-        alert('Notification no args');
+    clickEditButton = () => {
+        this.setState({currentStatus : 1});
     }
 
-    notificationHaveArgsUsingArrowFunction = (notify) => {
-        alert(notify);
+    clickSaveButton = () => {
+        this.setState({currentStatus : 0});
     }
 
-    notificationHaveArgsUsingBind = (notify) => {
-        alert(notify);
-    }
-
-    renderButton = () => (
-        <div className="row">
-            <div className="btn btn-group">
-            <div className="btn btn-info" onClick={this.notificationNoArgs}>Details</div>
-            <div className="btn btn-warning" onClick={() => this.notificationHaveArgsUsingArrowFunction("Notification Have Args Using Arrow Function")}>Edit</div>
-            <div className="btn btn-danger" onClick={this.notificationHaveArgsUsingBind.bind(this, "Notification Have Args Using Bind")}>Remove</div>
+    renderButton = () => {
+        return (
+            <div className="row">
+                <div className="btn btn-group">
+                <div className="btn btn-info" onClick={() => this.clickEditButton()}>Edit</div>
+                <div className="btn btn-danger">Remove</div>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 
-    renderForm = () => (
-        <div className="row">
-            <div className="form-group">
-                <input type="text" name="name" className="form-control"/>   
-                <div className="btn btn-success">Save</div>                       
-            </div>
-        </div> 
-    )
+    renderForm = () => {
+        return (
+            <div className="row">
+                <div className="form-group">
+                    <input type="text" name="name" className="form-control"/>   
+                    <div className="btn btn-success" onClick={() => this.clickSaveButton()}>Save</div>                       
+                </div>
+            </div> 
+        )
+    }
 
     checkDisplay = () => {
         if (this.state.currentStatus === 0) {
