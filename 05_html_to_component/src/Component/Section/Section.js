@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 class Section extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            currentStatus : 0
+        }
     }
 
     notificationNoArgs = () => {
@@ -15,6 +18,33 @@ class Section extends Component {
 
     notificationHaveArgsUsingBind = (notify) => {
         alert(notify);
+    }
+
+    renderButton = () => (
+        <div className="row">
+            <div className="btn btn-group">
+            <div className="btn btn-info" onClick={this.notificationNoArgs}>Details</div>
+            <div className="btn btn-warning" onClick={() => this.notificationHaveArgsUsingArrowFunction("Notification Have Args Using Arrow Function")}>Edit</div>
+            <div className="btn btn-danger" onClick={this.notificationHaveArgsUsingBind.bind(this, "Notification Have Args Using Bind")}>Remove</div>
+            </div>
+        </div>
+    )
+
+    renderForm = () => (
+        <div className="row">
+            <div className="form-group">
+                <input type="text" name="name" className="form-control"/>   
+                <div className="btn btn-success">Save</div>                       
+            </div>
+        </div> 
+    )
+
+    checkDisplay = () => {
+        if (this.state.currentStatus === 0) {
+            return this.renderButton();
+        } else {
+            return this.renderForm();
+        }
     }
 
     render() {
@@ -31,16 +61,9 @@ class Section extends Component {
                     <div className="p-5">
                         <h2 className="display-4">{this.props.title}</h2>
                         <p>{this.props.description}</p>
-                        <div className="row">
-                            <div className="btn btn-group">
-                            <div className="btn btn-info" 
-                                    onClick={this.notificationNoArgs}>Edit</div>
-                            <div className="btn btn-danger" 
-                                    onClick={() => this.notificationHaveArgsUsingArrowFunction("Notification Have Args Using Arrow Function")}>Remove</div>
-                            <div className="btn btn-warning" 
-                                    onClick={this.notificationHaveArgsUsingBind.bind(this, "Notification Have Args Using Bind")}>Add</div>
-                            </div>
-                        </div>
+                        
+                        {this.checkDisplay()}
+                        
                     </div>
                     </div>
                 </div>
