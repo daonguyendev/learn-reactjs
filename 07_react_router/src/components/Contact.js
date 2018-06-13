@@ -9,7 +9,7 @@ class Contact extends Component {
             <div className="row h-100">
               <div className="col-lg-7 my-auto">
                 <div className="header-content mx-auto">
-                  <h1 className="mb-5">News</h1>
+                  <h1 className="mb-5">Contact</h1>
                 </div>
               </div>
               <div className="col-lg-5 my-auto">
