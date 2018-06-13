@@ -31,7 +31,7 @@ class News extends Component {
           </div>
         </header>
         {/* begin news */}
-        <div className="container">
+        <div className="container pt-3">
           <div className="row nt-3">
             <div className="col-4">
               <div className="card-deck">

@@ -9,7 +9,7 @@ class RouterURL extends Component {
     render() {
         return (
             <div>
-                <Route exact path="/" component={Home}/>
+                <Route exact path="/home" component={Home}/>
                 <Route exact path="/news" component={News}/>
                 <Route exact path="/details" component={Details}/>
                 <Route exact path="/contact" component={Contact}/>
