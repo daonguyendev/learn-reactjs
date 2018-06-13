@@ -4,10 +4,6 @@ import Data from './Data.json';
 
 class News extends Component {
     render() {
-      var number = [1,3,5,7,9];
-      var number02 = number.map((value, key) => value*3 + " and position is: " + key);
-      console.log(number02);
-
         return (
             <div>
               <header className="masthead">
@@ -44,6 +40,7 @@ class News extends Component {
                     Data.map((value, key) => {
                       return (
                         <NewItems key={key}
+                        newsId={value.id}
                         image={value.image} 
                         title={value.title}
                         quote={value.quote}/>
