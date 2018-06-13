@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
-import './../css/App.css';
+import './../App.css';
+
 import Nav from './Nav';
 import Home from './Home';
+import Footer from './Footer';
+import News from './News';
+import Details from './Details';
+import Contact from './Contact';
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="App">
         <Nav/>
-        <Home/>
+        {/* <Home/> */}
+        {/* <News/> */}
+        {/* <Details/> */}
+        <Contact/>
+        <Footer/>
       </div>
     );
   }
