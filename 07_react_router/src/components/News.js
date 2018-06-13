@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import NewItems from './NewItems';
+import Data from './Data.json';
 
 class News extends Component {
     render() {
+      console.log(Data);
         return (
             <div>
         <header className="masthead">
@@ -33,132 +36,18 @@ class News extends Component {
         {/* begin news */}
         <div className="container pt-3">
           <div className="row nt-3">
-            <div className="col-4">
-              <div className="card-deck">
-                <div className="card">
-                  <div className="card-img-top">
-                    <a href="details.html"><img src="http://placehold.it/800x400" alt="For react router" className="img-fluid" /></a>
-                    <div className="card-body">
-                      <h4 className="card-title"><a href="details.html">News 2</a></h4>
-                      <p className="card-text">Lorem</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr />
-            </div>
-            <div className="col-4">
-              <div className="card-deck">
-                <div className="card">
-                  <div className="card-img-top">
-                    <a href="details.html"><img src="http://placehold.it/800x400" alt="For react router" className="img-fluid" /></a>
-                    <div className="card-body">
-                      <h4 className="card-title"><a href="details.html">News 2</a></h4>
-                      <p className="card-text">Lorem</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr />
-            </div>
-            <div className="col-4">
-              <div className="card-deck">
-                <div className="card">
-                  <div className="card-img-top">
-                    <a href="details.html"><img src="http://placehold.it/800x400" alt="For react router" className="img-fluid" /></a>
-                    <div className="card-body">
-                      <h4 className="card-title"><a href="details.html">News 2</a></h4>
-                      <p className="card-text">Lorem</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr />
-            </div>
-            <div className="col-4">
-              <div className="card-deck">
-                <div className="card">
-                  <div className="card-img-top">
-                    <a href="details.html"><img src="http://placehold.it/800x400" alt="For react router" className="img-fluid" /></a>
-                    <div className="card-body">
-                      <h4 className="card-title"><a href="details.html">News 2</a></h4>
-                      <p className="card-text">Lorem</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr />
-            </div>
-            <div className="col-4">
-              <div className="card-deck">
-                <div className="card">
-                  <div className="card-img-top">
-                    <a href="details.html"><img src="http://placehold.it/800x400" alt="For react router" className="img-fluid" /></a>
-                    <div className="card-body">
-                      <h4 className="card-title"><a href="details.html">News 2</a></h4>
-                      <p className="card-text">Lorem</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr />
-            </div>
-            <div className="col-4">
-              <div className="card-deck">
-                <div className="card">
-                  <div className="card-img-top">
-                    <a href="details.html"><img src="http://placehold.it/800x400" alt="For react router" className="img-fluid" /></a>
-                    <div className="card-body">
-                      <h4 className="card-title"><a href="details.html">News 2</a></h4>
-                      <p className="card-text">Lorem</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr />
-            </div>
-            <div className="col-4">
-              <div className="card-deck">
-                <div className="card">
-                  <div className="card-img-top">
-                    <a href="details.html"><img src="http://placehold.it/800x400" alt="For react router" className="img-fluid" /></a>
-                    <div className="card-body">
-                      <h4 className="card-title"><a href="details.html">News 2</a></h4>
-                      <p className="card-text">Lorem</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr />
-            </div>
-            <div className="col-4">
-              <div className="card-deck">
-                <div className="card">
-                  <div className="card-img-top">
-                    <a href="details.html"><img src="http://placehold.it/800x400" alt="For react router" className="img-fluid" /></a>
-                    <div className="card-body">
-                      <h4 className="card-title"><a href="details.html">News 2</a></h4>
-                      <p className="card-text">Lorem</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr />
-            </div>
-            <div className="col-4">
-              <div className="card-deck">
-                <div className="card">
-                  <div className="card-img-top">
-                    <a href="details.html"><img src="http://placehold.it/800x400" alt="For react router" className="img-fluid" /></a>
-                    <div className="card-body">
-                      <h4 className="card-title"><a href="details.html">News 2</a></h4>
-                      <p className="card-text">Lorem</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr />
-            </div>
+            <NewItems 
+              image="https://zmp3-photo.zadn.vn/banner/f/e/f/9/fef90bc4148b8765b3728ce809a23c89.jpg" 
+              title="Đừng Quên Tên Anh"
+              quote="Được biết, Hoa Vinh tên thật là Lê Tiến Anh"/>
+            <NewItems 
+              image="https://zmp3-photo.zadn.vn/banner/f/e/f/9/fef90bc4148b8765b3728ce809a23c89.jpg" 
+              title="Đừng Quên Tên Anh"
+              quote="Được biết, Hoa Vinh tên thật là Lê Tiến Anh"/>
+            <NewItems 
+              image="https://zmp3-photo.zadn.vn/banner/f/e/f/9/fef90bc4148b8765b3728ce809a23c89.jpg" 
+              title="Đừng Quên Tên Anh"
+              quote="Được biết, Hoa Vinh tên thật là Lê Tiến Anh"/>
           </div>
         </div>
       </div>
