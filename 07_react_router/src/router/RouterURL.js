@@ -11,7 +11,7 @@ class RouterURL extends Component {
             <div>
                 <Route exact path="/home" component={Home}/>
                 <Route exact path="/news" component={News}/>
-                <Route exact path="/details" component={Details}/>
+                <Route exact path="/news/:slug.:id.html" component={Details}/>
                 <Route exact path="/contact" component={Contact}/>
             </div>
         );

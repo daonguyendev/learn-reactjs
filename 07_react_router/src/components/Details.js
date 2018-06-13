@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class Details extends Component {
     render() {
+        console.log(this.props);
         return (
             <div>
                 <header className="masthead">

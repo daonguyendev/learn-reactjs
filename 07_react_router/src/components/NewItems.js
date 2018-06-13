@@ -41,7 +41,7 @@ class NewItems extends Component {
               <div className="card-deck">
                 <div className="card">
                   <div className="card-img-top">
-                    <a href={"/news/" + this.convertToSlugURL(this.props.title) + "-" + this.props.newsId + ".html"}><img src={this.props.image} alt="For react router" className="img-fluid" /></a>
+                    <a href={"/news/" + this.convertToSlugURL(this.props.title) + "." + this.props.newsId + ".html"}><img src={this.props.image} alt="For react router" className="img-fluid" /></a>
                     <div className="card-body">
                       <h4 className="card-title"><a href={"/news/" + this.convertToSlugURL(this.props.title) + "-" + this.props.newsId + ".html"}>{this.props.title}</a></h4>
                       <p className="card-text">{this.props.quote}</p>
