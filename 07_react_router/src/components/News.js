@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NewItems from './NewItems';
+import NewsItem from './NewsItem';
 import Data from './Data.json';
 
 class News extends Component {
@@ -39,7 +39,7 @@ class News extends Component {
                   {
                     Data.map((value, key) => {
                       return (
-                        <NewItems key={key}
+                        <NewsItem key={key}
                         newsId={value.id}
                         image={value.image} 
                         title={value.title}

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-class Details extends Component {
+class NewsDetail extends Component {
     render() {
-        console.log(this.props);
+        console.log(this.props.match.params.slug);
         return (
             <div>
                 <header className="masthead">
@@ -85,4 +85,4 @@ class Details extends Component {
     }
 }
 
-export default Details;
+export default NewsDetail;

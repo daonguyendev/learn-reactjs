@@ -6,7 +6,7 @@ import Nav from './Nav';
 import Home from './Home';
 import Footer from './Footer';
 import News from './News';
-import Details from './Details';
+import NewsDetail from './NewsDetail';
 import Contact from './Contact';
 import RouterURL from '././../router/RouterURL';
 
@@ -18,7 +18,7 @@ class App extends Component {
           <Nav/>
           {/* <Home/> */}
           {/* <News/> */}
-          {/* <Details/> */}
+          {/* <NewsDetail/> */}
           {/* <Contact/> */}
 
           <RouterURL/>
