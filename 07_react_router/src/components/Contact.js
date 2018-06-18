@@ -5,10 +5,22 @@ class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isRedirect: false
+      isRedirect: false,
+      fName: "",
+      fEmail: "",
+      fPhone: "",
+      fMess: ""
     }
   }
   
+  isChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+
+    this.setState({
+      [name]: value
+    });
+  }
 
   submitForm = (event) => {
     event.preventDefault();
@@ -17,8 +29,18 @@ class Contact extends Component {
     })
   }
 
+  getFieldValue = () => {
+    var fieldValue = "";
+    fieldValue += "Received name is: " + this.state.fName;
+    fieldValue += " / Received email is: " + this.state.fEmail;
+    fieldValue += " / Received phone is: " + this.state.fPhone;
+    fieldValue += " / Received message is: " + this.state.fMess;
+    return fieldValue;
+  }
+
     render() {
       if (this.state.isRedirect === true) {
+        console.log(this.getFieldValue());
         return <Redirect to="/" />;
       }
         return (
@@ -58,28 +80,28 @@ class Contact extends Component {
                   <div className="control-group">
                     <div className="form-group floating-label-form-group controls mb-0 pb-2">
                       <label>Name</label>
-                      <input className="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name." />
+                      <input onChange={(event) => this.isChange(event)} name="fName" className="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name." />
                       <p className="help-block text-danger" />
                     </div>
                   </div>
                   <div className="control-group">
                     <div className="form-group floating-label-form-group controls mb-0 pb-2">
                       <label>Email Address</label>
-                      <input className="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address." />
+                      <input onChange={(event) => this.isChange(event)} name="fEmail" className="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address." />
                       <p className="help-block text-danger" />
                     </div>
                   </div>
                   <div className="control-group">
                     <div className="form-group floating-label-form-group controls mb-0 pb-2">
                       <label>Phone Number</label>
-                      <input className="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number." />
+                      <input onChange={(event) => this.isChange(event)} name="fPhone" className="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number." />
                       <p className="help-block text-danger" />
                     </div>
                   </div>
                   <div className="control-group">
                     <div className="form-group floating-label-form-group controls mb-0 pb-2">
                       <label>Message</label>
-                      <textarea className="form-control" id="message" rows={5} placeholder="Message" required="required" data-validation-required-message="Please enter a message." defaultValue={""} />
+                      <textarea onChange={(event) => this.isChange(event)} name="fMess" className="form-control" id="message" rows={5} placeholder="Message" required="required" data-validation-required-message="Please enter a message." defaultValue={""} />
                       <p className="help-block text-danger" />
                     </div>
                   </div>
