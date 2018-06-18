@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import News from '../components/News';
 import Home from '../components/Home';
-import Contact from '../components/Contact';
 import NewsDetail from '../components/NewsDetail';
+import Contact from '../components/Contact';
 
 class RouterURL extends Component {
     render() {

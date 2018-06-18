@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'; 
 
-class NewItems extends Component {
-    // constructor(props) {
-    //     super(props);
-        
-    // }
+class NewsRelated extends Component {
 
     convertToSlugURL = (str) => {
         // Chuyển hết sang chữ thường
@@ -36,24 +32,18 @@ class NewItems extends Component {
         return str;
     }
 
+
     render() {
         return (
-            <div className="col-4">
-              <div className="card-deck">
-                <div className="card">
-                  <Link to={"/news/" + this.convertToSlugURL(this.props.title) + "." + this.props.newsId + ".html"}>
-                    <img src={this.props.image} className="card-img-top" alt="For react router" className="img-fluid" />
-                  </Link>
-                    <div className="card-body">
-                      <h4 className="card-title"><Link to={"/news/" + this.convertToSlugURL(this.props.title) + "." + this.props.newsId + ".html"}>{this.props.title}</Link></h4>
-                      <p className="card-text">{this.props.quote}</p>
-                    </div>
+            <div className="card">
+                <Link to={"/news/" + this.convertToSlugURL(this.props.title) + "." + this.props.newsId + ".html"}><img className="card-img-top" src={this.props.image} alt="true" /></Link>
+                <div className="card-body">
+                <Link className="card-title" to={"/news/" + this.convertToSlugURL(this.props.title) + "." + this.props.newsId + ".html"}>{this.props.title}</Link>
+                <p className="card-text">{this.props.quote}</p>
                 </div>
-              </div>
-              <hr />
             </div>
         );
     }
 }
 
-export default NewItems;
+export default NewsRelated;

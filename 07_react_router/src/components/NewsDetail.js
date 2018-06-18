@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Data from './Data.json';
+import NewsRelated from './NewsRelated';
 
 class NewsDetail extends Component {
     render() {
@@ -9,8 +10,12 @@ class NewsDetail extends Component {
         // if (x===y) {console.log("equals");}
         // console.log(typeof(y));
 
-        console.log(this.props.match.params.id);
-        console.log(typeof(this.props.match.params.id));
+        // console.log(this.props.match.params.id);
+        // console.log(typeof(this.props.match.params.id));
+
+        var count = 1;
+
+        console.log(this.props);
 
         return (
             <div>
@@ -56,40 +61,29 @@ class NewsDetail extends Component {
                     })
                 }
 
-
                 <div className="container">
                 <h4 className="card-title text-center">Related News</h4>
                 <div className="row">
                     <div className="col-12">
                     <div className="card-deck">
-                        <div className="card">
-                        <a href="/details"><img className="card-img-top" src="http://placehold.it/500x300/" alt="true" /></a>
-                        <div className="card-body">
-                            <h4 className="card-title">Title</h4>
-                            <p className="card-text">Text</p>
-                        </div>
-                        </div>
-                        <div className="card">
-                        <a href="/details"><img className="card-img-top" src="http://placehold.it/500x300/" alt="true" /></a>
-                        <div className="card-body">
-                            <h4 className="card-title">Title</h4>
-                            <p className="card-text">Text</p>
-                        </div>
-                        </div>
-                        <div className="card">
-                        <a href="/details"><img className="card-img-top" src="http://placehold.it/500x300/" alt="true" /></a>
-                        <div className="card-body">
-                            <h4 className="card-title">Title</h4>
-                            <p className="card-text">Text</p>
-                        </div>
-                        </div>
-                        <div className="card">
-                        <a href="/details"><img className="card-img-top" src="http://placehold.it/500x300/" alt="true" /></a>
-                        <div className="card-body">
-                            <h4 className="card-title">Title</h4>
-                            <p className="card-text">Text</p>
-                        </div>
-                        </div>
+                        {
+                            Data.map((value, key) => {
+                                console.log(key);
+                                if(value.id != this.props.match.params.id) {
+                                    if (count <= 4) {
+                                        count++;
+                                        return (
+                                            <NewsRelated key={key}
+                                                        newsId={value.id}
+                                                        image={value.image} 
+                                                        title={value.title}
+                                                        quote={value.quote}/>
+                                        )
+                                    }    
+                                }
+                                
+                            })
+                        }
                     </div>
                     </div>
                 </div>

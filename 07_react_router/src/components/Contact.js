@@ -16,10 +16,6 @@ class Contact extends Component {
                 <div className="device-container">
                   <div className="device-mockup iphone6_plus portrait white">
                     <div className="device">
-                      <div className="screen">
-                        {/* Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! */}
-                        <img src="img/demo-screen-1.jpg" className="img-fluid" alt />
-                      </div>
                       <div className="button">
                         {/* You can hook the "home button" to some JavaScript events or just remove it */}
                       </div>
